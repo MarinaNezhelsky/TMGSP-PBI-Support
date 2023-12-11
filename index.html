@@ -61,13 +61,12 @@
             <input type="date" id="today" name="today" readonly>
         </div>
 
-	<input type="reset">
-	<lable>         </lable>
-	<input type="submit">
-</form>
-	<script defer src="Google Sheet.js"></script>
+        <input type="reset">
+        <label> </label>
+        <input type="submit">
+    </form>
 
-	 <script>
+    <script>
         function setTodaysDate() {
             var today = new Date().toISOString().split('T')[0];
             document.getElementById('today').value = today;
