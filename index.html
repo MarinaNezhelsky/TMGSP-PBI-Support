@@ -70,14 +70,20 @@
         <br><br>
 
         <div>
-            <label for="date">Today's Date:</label>
-            <input type="date" id="date" name="date" readonly>
+<div>
+    <label for="date">Today's Date:</label>
+    <input type="date" id="date" name="date">
+</div>
+
         </div>
 
         <input type="reset">
         <label> </label>
         <input type="submit">  
     </form>
+<script>
+    document.getElementById('date').valueAsDate = new Date();
+</script>
 
 </body>
 
