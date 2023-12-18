@@ -1,78 +1,94 @@
 <html lang="en">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TMGsp Support</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMGsp Support</title>
 </head>
 <style>
-	form {
-            font-family: 'Segoe UI', sans-serif;
-        }
+    form {
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        label, input, select, textarea, button, body {
-            font-family: 'Segoe UI', sans-serif;
+    label,
+    input,
+    select,
+    textarea,
+    button,
+    body {
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        }
-
-        body {
-            font-size: 16px;
-	    text-align: center;
-	    background-image: url('https://github.com/MarinaNezhelsky/footprint14/blob/main/backround.jpg?raw=true');
-            background-size: cover; /* Adjust the sizing as needed */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+    body {
+        font-size: 16px;
+        text-align: center;
+        background-image: url('https://github.com/MarinaNezhelsky/footprint14/blob/main/backround.jpg?raw=true');
+        background-size: cover;
+        /* Adjust the sizing as needed */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 </style>
+
 <body>
-<br>
-	<h1 style="color:white" >TMGsp PowerBI Reports Support</h1>
-<br>
-	<h3>Form to request new features for PowerBI reports, or support request.</h3> 
+    <br>
+    <h1 style="color:white">TMGsp PowerBI Reports Support</h1>
+    <br>
+    <h3>Form to request new features for PowerBI reports, or support request.</h3>
 
-<form method="post" action="https://script.google.com/macros/s/AKfycbzrts8402JhSCRk02k3Oflz_qSRREh5vZx5KIfj3ytEcpmww2duSWmuXUfr7bzmbIc9/exec" name="submit-to-google-sheet">
-	<div>
-	<lable for="name"> Your Name:</lable>
-	<input type="text" id="name" name="name" placeholder="Your Name" required>
-	</div>
-<br>
-	<div>
-	<lable for="email"> Your Email Address:</lable>
-	<input type="email" id="email" name="email" placeholder="Your Email" required>
-	</div>
-<br>
-
-	<div>
-	<lable for="report"> Select Report: </lable>
-	<select id="report" name="report" required>
-		<option value="TRDD Indicator">TRDD Indicator</option>
-		<option value="ETS/RTS RDD Opportunieties">ETS/RTS RDD Opportunieties  </option>
-		<option value="EMS Health">EMS Health  </option>
-		<option value="EMS Changes">EMS Changes </option>
-		<option value="Capacity Validation">Capacity Validation </option></select>
-	</div>
-<br>
-	<lable for="request"> Your Request: </lable>
-<br>
-	<textarea name="request" id="request" placeholder="Write your request" cols="100" rows="10"></textarea>
-<br><br>
+    <form method="post" action="YOUR_POWER_AUTOMATE_FLOW_URL" name="submit-to-sharepoint">
+        <!-- Replace YOUR_POWER_AUTOMATE_FLOW_URL with the actual HTTP endpoint from Power Automate -->
+	    <div class="success-message" style="display:none;">
+            Thank you for your submission. Click <a href="#" id="addAnother">Here</a> to another. 
+        </div>
+	    <div class="form-group">
         <div>
-            <label for="today">Today's Date:</label>
+            <label for="name"> Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <br>
+        <div>
+            <label for="email"> Your Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="report"> Select Report: </label>
+            <select id="report" name="report" required>
+                <option value="TRDD Indicator">TRDD Indicator</option>
+                <option value="ETS/RTS RDD Opportunities">ETS/RTS RDD Opportunities </option>
+                <option value="EMS Health">EMS Health </option>
+                <option value="EMS Changes">EMS Changes </option>
+                <option value="Capacity Validation">Capacity Validation </option>
+            </select>
+        </div>
+        <br>
+        <label for="request"> Your Request: </label>
+        <br>
+        <textarea name="request" id="request" placeholder="Write your request" cols="100" rows="10"></textarea>
+        <br><br>
+
+        <div>
+            <label for="date">Today's Date:</label>
             <input type="date" id="date" name="date" readonly>
         </div>
 
         <input type="reset">
         <label> </label>
         <input type="submit">
+   <a class="btn btn-submit btn-success">Submit</a>  
     </form>
 
     <script>
         function setTodaysDate() {
             var today = new Date().toISOString().split('T')[0];
-            document.getElementById('today').value = today;
+            document.getElementById('date').value = today;
         }
         setTodaysDate();
     </script>
 
 </body>
+
 </html>
